@@ -3,17 +3,21 @@ import Link from "next/link";
 import { gql } from "@apollo/client";
 import client from "../apollo-client";
 
-export default function AllFish({ fishes }) {
+export default function AllBugs({ bugs }) {
   return (
     <>
       <Head>
-        <title>All Fish</title>
+        <title>All Bugs</title>
       </Head>
-      <h1>All Fish Go Here</h1>
-      <p>All the fish</p>
+      <h1>All Bugs Go Here</h1>
+      <p>All the bugs</p>
       <ul>
-        {fishes.map((fish) => (
-          <li key={fish}>{fish}</li>
+        {bugs.map(({ name, slug }) => (
+          <li key={name}>
+            <Link href={`/bugs/${slug}`}>
+              <a>{name}</a>
+            </Link>
+          </li>
         ))}
       </ul>
       <h2>
@@ -28,20 +32,18 @@ export default function AllFish({ fishes }) {
 export async function getStaticProps() {
   const { data } = await client.query({
     query: gql`
-      query getAllFish {
-        getAllFish {
+      query getAllBugs {
+        getAllBugs {
           name
+          slug
         }
       }
     `,
   });
 
-  let names = data.getAllFish.map((fish) => fish.name);
-  console.log(names);
-
   return {
     props: {
-      fishes: data.getAllFish.map((fish) => fish.name),
+      bugs: data.getAllBugs,
     },
   };
 }

@@ -14,29 +14,16 @@ export default function Home() {
 
       <main className={styles.main}>
         <h2 className="title">
-          <Link href="/all-bugs">
+          <Link href="/bugs">
             <a>All Bugs</a>
           </Link>
         </h2>
         <h2 className="title">
-          <Link href="/all-fish">
+          <Link href="/fish">
             <a>All Fish</a>
           </Link>
         </h2>
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
     </div>
   );
 }
