@@ -24,7 +24,7 @@ export default function Fish({ fishData }) {
           <h3>Value:</h3> {fishData.value}
         </li>
         <li>
-          <h3>Time of day available:</h3> {fishData.time_range}
+          <h3>Time of day available:</h3> {fishData.timeRange}
         </li>
         <li>
           <h3>AM Hours Available:</h3> {fishData.hoursAM}

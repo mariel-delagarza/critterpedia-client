@@ -22,7 +22,7 @@ export default function Bug({ bugData }) {
           <h3>Value:</h3> {bugData.value}
         </li>
         <li>
-          <h3>Time of day available:</h3> {bugData.time_range}
+          <h3>Time of day available:</h3> {bugData.timeRange}
         </li>
         <li>
           <h3>AM Hours Available:</h3> {bugData.hoursAM}
