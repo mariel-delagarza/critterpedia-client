@@ -2,24 +2,17 @@ import Head from "next/head";
 import Link from "next/link";
 import { gql } from "@apollo/client";
 import client from "../apollo-client";
+import { Table } from "../components/table";
 
 export default function AllBugs({ bugs }) {
+  console.log(bugs);
+
   return (
     <>
       <Head>
         <title>All Bugs</title>
       </Head>
-      <h1>All Bugs Go Here</h1>
-      <p>All the bugs</p>
-      <ul>
-        {bugs.map(({ name, slug }) => (
-          <li key={name}>
-            <Link href={`/bugs/${slug}`}>
-              <a>{name}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <Table critters={bugs} />
       <h2>
         <Link href="/">
           <a>Back to Home</a>
@@ -36,6 +29,14 @@ export async function getStaticProps() {
         getAllBugs {
           name
           slug
+          value
+          location
+          monthsNorth
+          monthsSouth
+          location
+          timeRange
+          hoursAM
+          hoursPM
         }
       }
     `,
