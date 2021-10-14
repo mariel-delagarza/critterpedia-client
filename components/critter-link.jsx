@@ -1,9 +1,11 @@
 import React from "react";
 import Link from "next/link";
 
-export const CritterLink = (key, pluralCritter, critter) => {
+export const CritterLink = ({ key, pluralCritter, critter }) => {
+  console.log(key, pluralCritter, critter);
+
   return (
-    <Link key={key} href={`/${pluralCritter})/${critter.slug}`}>
+    <Link key={key} href={`/${pluralCritter}/${critter.slug}`}>
       <a>{critter.name}</a>
     </Link>
   );

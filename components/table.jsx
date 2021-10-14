@@ -4,9 +4,13 @@ import { CritterLink } from "./critter-link";
 export const Table = ({ critters }) => {
   const getLink = (critter) => {
     if (critter.typename === "fish") {
-      <CritterLink key={critter.id} pluralCritter="fish" critter={critter} />;
+      return (
+        <CritterLink key={critter.id} pluralCritter="fish" critter={critter} />
+      );
     } else {
-      <CritterLink key={critter.id} pluralCritter="bugs" critter={critter} />;
+      return (
+        <CritterLink key={critter.id} pluralCritter="bugs" critter={critter} />
+      );
     }
   };
 
