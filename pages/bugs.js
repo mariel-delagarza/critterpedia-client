@@ -2,20 +2,21 @@ import Head from "next/head";
 import Link from "next/link";
 import { gql } from "@apollo/client";
 import client from "../apollo-client";
-import { Table } from "../components/table";
+import { Table } from "../components/tailwind-table";
 
 export default function AllBugs({ bugs }) {
-  console.log(bugs);
+  //log(bugs);
 
   return (
     <>
       <Head>
         <title>All Bugs</title>
       </Head>
+      <h1 className="my-8 text-4xl">All Bugs</h1>
       <Table critters={bugs} />
-      <h2>
+      <h2 className="my-8">
         <Link href="/">
-          <a>Back to Home</a>
+          <a className="text-4xl text-blue-700 underline">Back to Home</a>
         </Link>
       </h2>
     </>
