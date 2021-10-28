@@ -26,26 +26,27 @@ export default function Home() {
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css"></link>
       </Head>
 
-      <main>
-        <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-          <h2 className="my-8 text-4xl">
+      <main className="flex items-center justify-center h-screen bg-green-200">
+        <div className="container mx auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
             <Link href="/bugs">
-              <a>All Bugs</a>
+              <a className="flex justify-center text-4xl border-2 border-yellow-700 rounded-xl p-6 bg-yellow-700 text-yellow-100 my-8">
+                All Bugs
+              </a>
             </Link>
-          </h2>
-          <h2 className="my-8 text-4xl">
             <Link href="/fish">
-              <a>All Fish</a>
+              <a className="flex justify-center text-4xl border-2 border-yellow-700 rounded-xl p-6 bg-yellow-700 text-yellow-100 my-8">
+                All Fish
+              </a>
             </Link>
-          </h2>
-          <h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-24 gap-y-6">
             {months.map((month) => (
               <>
                 <MonthLink month={month.name} />
-                <br />
               </>
             ))}
-          </h2>
+          </div>
         </div>
       </main>
     </div>
