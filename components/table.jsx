@@ -72,7 +72,7 @@ export const Table = ({ critters }) => {
                       {critter.timeRange}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                      {critter.monthsNorth}
+                      {critter.monthsNorth.join(", ")}
                     </td>
                   </tr>
                 ))}
