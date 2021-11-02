@@ -3,6 +3,7 @@ import { Table } from "../components/table";
 import { gql } from "@apollo/client";
 import client from "../apollo-client";
 import { useRouter } from "next/router";
+import MonthDropdown from "../components/month-dropdown";
 
 export default function Month({ bugs, fish }) {
   const { query } = useRouter();
@@ -28,7 +29,7 @@ export default function Month({ bugs, fish }) {
   return (
     <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
       <h1 className="my-8 text-4xl">{`${month}`}</h1>
-      <p>dropdown to select different month</p>
+      <MonthDropdown />
       <Table critters={sortedCritters} />
       <h2 className="my-8">
         <Link href="/">
