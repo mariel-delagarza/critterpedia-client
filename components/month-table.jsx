@@ -1,6 +1,6 @@
 import { CritterLink } from "./critter-link";
 
-export const Table = ({ sortedCritters }) => {
+export const MonthTable = ({ sortedCritters }) => {
   const getLink = (critter) => {
     if (critter.__typename === "Fish") {
       return (
