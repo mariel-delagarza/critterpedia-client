@@ -1,6 +1,6 @@
 import { CritterLink } from "./critter-link";
 
-export const Table = ({ critters }) => {
+export const Table = ({ sortedCritters }) => {
   const getLink = (critter) => {
     if (critter.__typename === "Fish") {
       return (
@@ -54,7 +54,7 @@ export const Table = ({ critters }) => {
                 </tr>
               </thead>
               <tbody>
-                {critters.map((critter, critterIdx) => (
+                {sortedCritters.map((critter, critterIdx) => (
                   <tr
                     key={critter.name}
                     className={critterIdx % 2 === 0 ? "bg-white" : "bg-gray-50"}

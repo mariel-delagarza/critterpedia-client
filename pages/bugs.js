@@ -2,7 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { gql } from "@apollo/client";
 import client from "../apollo-client";
-import { Table } from "../components/table";
+import { Table } from "../components/month-table";
 
 export default function AllBugs({ bugs }) {
   //log(bugs);
