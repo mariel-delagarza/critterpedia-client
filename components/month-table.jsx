@@ -1,18 +1,6 @@
 import { CritterLink } from "./critter-link";
 
 export const MonthTable = ({ sortedCritters }) => {
-  const getLink = (critter) => {
-    if (critter.__typename === "Fish") {
-      return (
-        <CritterLink key={critter.id} pluralCritter="fish" critter={critter} />
-      );
-    } else {
-      return (
-        <CritterLink key={critter.id} pluralCritter="bugs" critter={critter} />
-      );
-    }
-  };
-
   return (
     <div className="flex flex-col my-8">
       <div className="-my-2 sm:-mx-6 lg:-mx-8">
@@ -60,7 +48,7 @@ export const MonthTable = ({ sortedCritters }) => {
                     className={critterIdx % 2 === 0 ? "bg-white" : "bg-gray-50"}
                   >
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                      {getLink(critter)}
+                      <CritterLink critter={critter} />
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                       {critter.location}
