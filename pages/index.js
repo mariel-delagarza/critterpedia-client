@@ -1,23 +1,9 @@
 import Head from "next/head";
 import Link from "next/link";
 import { MonthLink } from "../components/month-link";
+import { months } from "../lib/months.js";
 
 export default function Home() {
-  const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-
   return (
     <div>
       <Head>
