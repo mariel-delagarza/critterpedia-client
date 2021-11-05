@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { getBugSlugs } from "../../lib/bug-data";
 import { getBugData } from "../../lib/bug-data";
-import { PaperClipIcon } from "@heroicons/react/solid";
 
 export default function Bug({ bugData }) {
   console.log(bugData);
