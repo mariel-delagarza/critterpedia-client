@@ -13,7 +13,7 @@ export default function Month({ bugs, fish }) {
   // Filter critters by query.month (URL) and sort
   // what's returned by name
   const crittersInMonth = allCritters.filter((critter) => {
-    return critter.monthsNorth.includes(`${query.month}`);
+    return critter.monthsNorth.includes(query.month);
   });
   const sortedCritters = crittersInMonth.sort(function (a, b) {
     if (a.name < b.name) {
@@ -27,7 +27,7 @@ export default function Month({ bugs, fish }) {
 
   return (
     <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-      <h1 className="my-8 text-4xl">{`${query.month}`}</h1>
+      <h1 className="my-8 text-4xl">{query.month}</h1>
       <MonthDropdown month={query.month} />
       <MonthTable sortedCritters={sortedCritters} />
 
