@@ -3,6 +3,7 @@ import { getBugSlugs } from "../../lib/bug-data";
 import { getBugData } from "../../lib/bug-data";
 
 export default function Bug({ bugData }) {
+  console.log(bugData);
   return (
     <div>
       <ul>

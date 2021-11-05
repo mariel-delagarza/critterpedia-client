@@ -2,6 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { gql } from "@apollo/client";
 import client from "../apollo-client";
+import { MonthTable } from "../components/month-table";
 
 export default function AllBugs({ bugs }) {
   return (
@@ -9,20 +10,11 @@ export default function AllBugs({ bugs }) {
       <Head>
         <title>All Bugs</title>
       </Head>
-      <h1>All Bugs Go Here</h1>
-      <p>All the bugs</p>
-      <ul>
-        {bugs.map(({ name, slug }) => (
-          <li key={name}>
-            <Link href={`/bugs/${slug}`}>
-              <a>{name}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
-      <h2>
+      <h1 className="my-8 text-4xl">All Bugs</h1>
+      <MonthTable sortedCritters={bugs} />
+      <h2 className="my-8">
         <Link href="/">
-          <a>Back to Home</a>
+          <a className="text-4xl text-blue-700 underline">Back to Home</a>
         </Link>
       </h2>
     </>
@@ -36,6 +28,14 @@ export async function getStaticProps() {
         getAllBugs {
           name
           slug
+          value
+          location
+          monthsNorth
+          monthsSouth
+          location
+          timeRange
+          hoursAM
+          hoursPM
         }
       }
     `,
