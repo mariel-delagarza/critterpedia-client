@@ -32,7 +32,6 @@ export async function getStaticProps() {
           location
           monthsNorth
           monthsSouth
-          location
           timeRange
           hoursAM
           hoursPM
