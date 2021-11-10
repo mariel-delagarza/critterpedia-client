@@ -5,7 +5,6 @@ import client from "../apollo-client";
 import { MonthTable } from "../components/month-table";
 
 export default function AllFish({ fishes }) {
-  console.log(fishes);
   return (
     <>
       <Head>

@@ -3,7 +3,6 @@ import { getBugSlugs } from "../../lib/bug-data";
 import { getBugData } from "../../lib/bug-data";
 
 export default function Bug({ bugData }) {
-  console.log(bugData);
   return (
     <div>
       <h1 className="text-4xl leading-6 font-medium text-gray-900 my-8">
