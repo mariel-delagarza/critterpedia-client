@@ -2,32 +2,42 @@
 import { gql } from "@apollo/client";
 import client from "../apollo-client";
 //import { useRouter } from "next/router";
-import { useState } from "react";
 import { useRouter } from "next/router";
 import HourDropdown from "../components/hour-dropdown";
+import { useEffect, useState } from "react"
 
 const initialValues = {
-  hour: "One",
-  meridian: true,
+  hour: "one",
+  meridian: 'AM',
   month: "January",
 };
 
 export default function Hour({ bugs, fish }) {
-  const { query } = useRouter();
-  console.log(query);
+  const { query, isReady } = useRouter();
+  const [params, setParams] = useState(null)
+
+  useEffect(()=>{
+    // workaround initial empty `query` issue: https://github.com/vercel/next.js/discussions/11484
+    if(!isReady) return;
+    setParams(query)
+  }, [isReady, query]);
+
+  if (!params) {
+    return null // or loading, etc. - just not an uncontrolled form input with `defaultValue`
+  }
 
   const allCritters = bugs.concat(fish);
   const crittersAM = allCritters.filter((critter) => {
-    return critter.hoursAM.includes(query.hour);
+    return critter.hoursAM.includes(params.hour);
   });
   const crittersPM = allCritters.filter((critter) => {
-    return critter.hoursPM.includes(query.hour);
+    return critter.hoursPM.includes(params.hour);
   });
   const crittersInMonthAM = crittersAM.filter((critter) => {
-    return critter.monthsNorth.includes(query.month);
+    return critter.monthsNorth.includes(params.month);
   });
   const crittersInMonthPM = crittersPM.filter((critter) => {
-    return critter.monthsNorth.includes(query.month);
+    return critter.monthsNorth.includes(params.month);
   });
   const sortedMorningCritters = crittersInMonthAM.sort(function (a, b) {
     if (a.name < b.name) {
@@ -48,28 +58,29 @@ export default function Hour({ bugs, fish }) {
     return 0;
   });
 
-  console.log(sortedMorningCritters);
-  console.log(sortedAfternoonCritters);
+  // console.log(sortedMorningCritters);
+  // console.log(sortedAfternoonCritters);
 
   const handleSubmit = (e) => {};
+
 
   return (
     <div>
       <h1 className="text-4xl my-8">Form Stuff</h1>
       <form method="GET">
         <label>Hour: </label>
-        <select defaultValue={query.hour} name="hour">
+        <select defaultValue={params.hour} name="hour">
           <option value="one">1</option>
           <option value="two">2</option>
         </select>
 
         <label>AM or PM? </label>
-        <select defaultValue={query.meridian} name="meridian">
+        <select defaultValue={params.meridian} name="meridian">
           <option value="AM">AM</option>
           <option value="PM">PM</option>
         </select>
         <label>Month: </label>
-        <select defaultValue={query.month} name="month">
+        <select defaultValue={params.month} name="month">
           <option value="January">January</option>
           <option value="February">February</option>
         </select>
