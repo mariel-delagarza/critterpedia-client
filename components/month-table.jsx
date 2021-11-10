@@ -39,6 +39,24 @@ export const MonthTable = ({ sortedCritters }) => {
                   >
                     Months
                   </th>
+                  {sortedCritters.filter(
+                    (critter) => critter.__typename === "Fish"
+                  ).length > 0 && (
+                    <>
+                      <th
+                        scope="col"
+                        className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                      >
+                        Shadow Size
+                      </th>
+                      <th
+                        scope="col"
+                        className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                      >
+                        Fin?
+                      </th>
+                    </>
+                  )}
                 </tr>
               </thead>
               <tbody>
@@ -62,6 +80,19 @@ export const MonthTable = ({ sortedCritters }) => {
                     <td className="px-6 py-4 break-words text-sm text-gray-500">
                       {critter.monthsNorth.join(", ")}
                     </td>
+                    {sortedCritters.filter(
+                      (critter) => critter.__typename === "Fish"
+                    ).length > 0 && (
+                      <>
+                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                          {critter.shadowSize}
+                        </td>
+                        <td className="px-6 py-4 break-words text-sm text-gray-500">
+                          {critter.fin == true && "Yes, yes!"}
+                          {critter.fin == false && "No"}
+                        </td>
+                      </>
+                    )}
                   </tr>
                 ))}
               </tbody>
