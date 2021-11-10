@@ -62,6 +62,11 @@ export default function Bug({ bugData }) {
           <a className="text-4xl text-blue-700 underline">Back to All Bugs</a>
         </Link>
       </h2>
+      <h2 className="my-8">
+        <Link href="/">
+          <a className="text-4xl text-blue-700 underline">Back to Home</a>
+        </Link>
+      </h2>
     </div>
   );
 }

@@ -74,6 +74,11 @@ export default function Fish({ fishData }) {
           <a className="text-4xl text-blue-700 underline">Back to All Fish</a>
         </Link>
       </h2>
+      <h2 className="my-8">
+        <Link href="/">
+          <a className="text-4xl text-blue-700 underline">Back to Home</a>
+        </Link>
+      </h2>
     </div>
   );
 }
