@@ -53,12 +53,12 @@ export default function Hour({ bugs, fish }) {
 
   return (
     <div>
-      <h1 className="text-4xl my-8">Critters by Hour of the Day</h1>
+      <h1 className="text-4xl mx-8 my-8">Critters by Hour of the Day</h1>
       <form
         method="GET"
-        className="mt-3 grid grid-cols-1 gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4"
+        className="mx-8 grid grid-cols-1 gap-2 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-2xl"
       >
-        <div className="flex-1 flex items-center justify-start border-solid border-4 bg-white rounded truncate">
+        <div className="flex-initial flex items-center justify-center rounded truncate">
           <label
             htmlFor="hour"
             className="block text-sm font-medium text-gray-700 px-4"
@@ -76,7 +76,7 @@ export default function Hour({ bugs, fish }) {
             <option value="Three">3</option>
           </select>
         </div>
-        <div className="flex-1 flex items-center justify-start border-solid border-4 bg-white rounded truncate">
+        <div className="flex-initial flex items-center justify-center rounded truncate">
           <label
             htmlFor="meridian"
             className="block text-sm font-medium text-gray-700 px-4"
@@ -93,7 +93,7 @@ export default function Hour({ bugs, fish }) {
             <option value="PM">PM</option>
           </select>
         </div>
-        <div className="flex-1 flex items-center justify-start border-solid border-4 bg-white rounded truncate">
+        <div className="flex-initial flex items-center justify-center rounded truncate">
           <label
             htmlFor="month"
             className="block text-sm font-medium text-gray-700 px-4"
@@ -112,7 +112,7 @@ export default function Hour({ bugs, fish }) {
         </div>
         <button
           type="submit"
-          className="items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 max-w-sm"
+          className="mx-10 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 max-w-sm"
         >
           Submit
         </button>

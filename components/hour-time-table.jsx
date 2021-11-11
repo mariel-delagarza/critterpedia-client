@@ -2,7 +2,7 @@ import { CritterLink } from "./critter-link";
 
 export const HourTimeTable = ({ sortedCritters }) => {
   return (
-    <div className="flex flex-col my-8">
+    <div className="flex flex-col mx-8 my-8">
       <div className="-my-2 sm:-mx-6 lg:-mx-8">
         <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
           <div className="overflow-visible sm:rounded-lg">
